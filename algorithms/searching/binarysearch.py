@@ -1,4 +1,4 @@
-# note: array to be searched has to be sorted in non-decreasing order
+# Note: The array to be searched has to be sorted in non-decreasing order.
 
 
 def binarysearch(array, item):
