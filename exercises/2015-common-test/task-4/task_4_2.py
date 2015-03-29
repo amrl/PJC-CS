@@ -11,5 +11,3 @@ def efficiency():
     efficiency = data_bits / (data_bits + add_bits)
 
     print("{0:.2f}".format(efficiency))
-
-efficiency()
