@@ -1,5 +1,5 @@
 # H2 Computing
-Collection of Python code for / related to H2 Computing in Pioneer JC.
+Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
