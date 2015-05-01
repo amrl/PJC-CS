@@ -1,13 +1,13 @@
-def efficiency():
-    with open("DATA42.txt", 'r') as infile:
-        n = 0
-        m = 0
+def efficiency(filename):
+    with open(filename, 'r') as infile:
+        rows = []
         for line in infile:
-            n += 1
-            m = len(line) - 1
+            rows.append(line[:-1])
 
-    data_bits = m * n
-    add_bits = m + n + 1
-    efficiency = data_bits / (data_bits + add_bits)
+    n = len(rows)
+    m = len(rows[0])
 
-    print("{0:.2f}".format(efficiency))
+    data_bits = n * m
+    additional_bits = n + m + 1
+
+    return round(data_bits / (data_bits + additional_bits), 2)

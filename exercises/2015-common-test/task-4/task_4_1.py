@@ -1,58 +1,73 @@
-# Note: This program only deals with 1 set of data, as opposed to 2 sets
-# indicated by the question. Add your own code to complete it.
-
-
-def find_error():
-    # input each row into a list
-    with open("DATA41.txt", 'r') as infile:
-        rows = []
-        for line in infile:
-            rows.append(line[:-1])
-
-    # find the row with the error, if it exists
+def checkError(rows):
+    # search for the row with the error, if any
     error_row = None
-    for row_number, line in enumerate(rows):
+    for index, eachrow in enumerate(rows):
         ones_count = 0
-        for bit in line:
+        for bit in eachrow:
             if bit == '1':
                 ones_count += 1
         if ones_count % 2 != 0:
-            error_row = row_number
+            error_row = index
             break
 
     if error_row is None:
-        print("No error detected.")
+        print("No error detected.\n")
     else:
-        # input each column into a list
+        # transpose the matrix
         columns = []
-        for index in range(len(rows)):
-            columns.append(''.join(row[index] for row in rows))
+        for index in range(len(rows[0])):
+            columns.append(''.join(eachrow[index] for eachrow in rows))
 
-        # find the column with the error
-        for column_number, line in enumerate(columns):
+        # search for the column with the error
+        for index, eachcolumn in enumerate(columns):
             ones_count = 0
-            for bit in line:
+            for bit in eachcolumn:
                 if bit == '1':
                     ones_count += 1
             if ones_count % 2 != 0:
-                error_column = column_number
+                error_column = index
+                break
 
-        # replace the row in the list (rows) with the corrected row
-        new_row = ""
-        for column, bit in enumerate(rows[error_row]):
-            if column == error_column:
-                if bit == '1':
-                    new_row += '0'
-                else:
-                    new_row += '1'
-            else:
-                new_row += bit
-        rows[error_row] = new_row
+        # revert transposition
+        rows = []
+        for index in range(len(columns[0])):
+            rows.append(''.join(eachcolumn[index] for eachcolumn in columns))
 
-        # remove the last row and column (parity bits) before final printing
-        for count, row in enumerate(rows):
-            rows[count] = row[:-1]
-        rows.pop()
+        # correct the error
+        rows[error_row] = bitFlip(rows[error_row], error_column)
 
+        # display corrected bits, without parity bits
         print("Error at ({0},{1})".format(error_row, error_column))
-        print("Correct data: {0}".format(' '.join(rows)))
+        print("Correct data: ", end="")
+        for eachrow in rows:
+            print(eachrow[:-1], end=" ")
+        print()
+
+
+def bitFlip(bitstring, index):
+    """Flip the bit at the specified index of the bit string"""
+    if bitstring[index] == '1':
+        return bitstring[:index] + '0' + bitstring[index+1:]
+    else:
+        return bitstring[:index] + '1' + bitstring[index+1:]
+
+
+with open("DATA41.txt", 'r') as infile:
+    # read in all the rows
+    allrows = []
+    for line in infile:
+        allrows.append(line[:-1])
+
+    # separate the 2 datasets
+    for index, eachrow in enumerate(allrows):
+        if len(eachrow) != len(allrows[0]):
+            start_index_2nd_set = index
+            break
+
+    set_1 = allrows[:start_index_2nd_set]
+    set_2 = allrows[start_index_2nd_set:]
+    sets = [set_1, set_2]
+
+    # check for errors
+    for eachset in sets:
+        checkError(eachset)
