@@ -3,6 +3,11 @@ Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
+### [0.0.3] - 2015/05/01
+- Added Task 4.3 to exercises/2015-common-test/task-4/
+- Refactored Task 4.1 and 4.2 in exercises/2015-common-test/task-4/
+- Added real data sets to exercises/2015-common-test/task-4/
+
 ### [0.0.2] - 2015/03/29
 - Added exercises/2015-common-test/task-4/ (only Task 4.1 and 4.2)
 
