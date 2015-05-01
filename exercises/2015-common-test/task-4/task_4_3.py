@@ -49,7 +49,7 @@ with open("DATA43.txt", 'r') as infile:
                 for eachrow in newrows:
                     print(eachrow)
 
-                print('*')
+                print()
                 break
 
         sets -= 1
