@@ -35,9 +35,9 @@ def addParity(rows):
 
 
 with open("DATA43.txt", 'r') as infile:
-    sets = int(infile.readline())
+    no_of_sets = int(infile.readline())
 
-    while sets > 0:
+    while no_of_sets > 0:
         rows = []
 
         for line in infile:
@@ -45,11 +45,22 @@ with open("DATA43.txt", 'r') as infile:
                 rows.append(line[:-1])
             else:
                 newrows = addParity(rows)
-                # display new rows
+
                 for eachrow in newrows:
                     print(eachrow)
 
                 print()
                 break
 
-        sets -= 1
+        no_of_sets -= 1
+
+    # 2nd method - without using the no_of_sets variable
+    # Drawback - have to read the whole file into memory
+    #
+    # sets = infile.read().split('*\n')[:-1]
+    # for rows in sets:
+    #     rows = rows.split('\n')[:-1]
+    #     newrows = addParity(rows)
+    #     for eachrow in newrows:
+    #         print(eachrow)
+    #     print()
