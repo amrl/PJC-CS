@@ -1,11 +1,9 @@
 def efficiency(filename):
     with open(filename, 'r') as infile:
-        rows = []
+        m = len(infile.readline()[:-1])
+        n = 0
         for line in infile:
-            rows.append(line[:-1])
-
-    n = len(rows)
-    m = len(rows[0])
+            n += 1
 
     data_bits = n * m
     additional_bits = n + m + 1
