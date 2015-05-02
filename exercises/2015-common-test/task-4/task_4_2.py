@@ -1,6 +1,9 @@
 def efficiency(filename):
     with open(filename, 'r') as infile:
         m = len(infile.readline()[:-1])
+
+        infile.seek(0)
+
         n = 0
         for line in infile:
             n += 1
