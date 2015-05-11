@@ -208,3 +208,5 @@ def display_rank():
 
     else:
         print("\n*Invalid input.")
+
+# display_rank()
