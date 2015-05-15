@@ -15,7 +15,7 @@ def val_rank_range(rank_range, linkedlist):
         return False
 
     if lower.isdigit() and upper.isdigit():
-        if int(lower) > 0 and int(upper) > 0:
+        if int(lower) > 0 and int(upper) > 0 and int(lower) < int(upper):
             if int(upper) <= linkedlist.get_max_rank():
                 return True
     else:
@@ -53,9 +53,8 @@ def display_rank(linkedlist):
         print('-'*25)
         # display real data
         for rank in range(lower, upper+1):
-            if rank not in rank_count:
-                break
-            print("Rank #{0}: {1}".format(rank, rank_count[rank]))
+            if rank in rank_count:
+                print("Rank #{0}: {1}".format(rank, rank_count[rank]))
 
     else:
         print("- Invalid input -")
