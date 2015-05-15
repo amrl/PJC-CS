@@ -28,7 +28,7 @@ def update(linkedlist):
 
     if val_id(player_id) and val_score(score):
 
-        print("Old rank: ", linkedlist.get_rank(player_id))
+        print("\nOld rank: ", linkedlist.get_rank(player_id))
 
         if linkedlist.exists(player_id):
             new_score = linkedlist.get_score(player_id) + int(score)
