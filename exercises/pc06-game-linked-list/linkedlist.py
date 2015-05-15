@@ -57,7 +57,9 @@ class LinkedList:
                     new_node.next = current
 
     def remove(self, player_id):
-        """Remove a player node in the list with the given player id."""
+        """Remove a player node in the list with the given player id.
+        Assumes player exists.
+        """
         prev = None
         current = self.head
 
@@ -80,15 +82,19 @@ class LinkedList:
 
     def get_rank(self, player_id):
         rank = 1
+        position = 1  # absolute
+
         current = self.head
         prev = None
 
-        while current.id != player_id:
+        while current.id != player_id and current.next is not None:
+            position += 1
+
             prev = current
             current = current.next
 
             if prev.score != current.score:
-                rank += 1
+                rank = position
 
         if current.id == player_id:
             return rank
@@ -97,29 +103,30 @@ class LinkedList:
 
     def get_max_rank(self):
         """Return the maximum ranking in a populated list."""
-        if self.head is None:
-            return None
-        else:
-            max_rank = 1
+        max_rank = 1
+        position = 1
 
-            prev = None
-            current = self.head
-            while current.next is not None:
-                prev = current
-                current = current.next
+        prev = None
+        current = self.head
 
-                if prev.score != current.score:
-                    max_rank += 1
+        while current.next is not None:
+            position += 1
 
-            return max_rank
+            prev = current
+            current = current.next
+
+            if prev.score != current.score:
+                max_rank = position
+
+        return max_rank
 
     def __str__(self):
-        output = ""
+        output = "\n"
 
         current = self.head
         while current is not None:
             output += "[{0}, {1}]---> ".format(current.id, current.score)
             current = current.next
-        output += " None"
+        output += " (END)\n"
 
         return output
