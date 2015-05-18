@@ -24,6 +24,10 @@ def val_rank_range(rank_range, linkedlist):
 
 
 def display_rank(linkedlist):
+    if linkedlist.isEmpty():
+        print("- List is empty -")
+        return  # EXIT
+
     while True:
         rank_range = input("Enter a rank range (e.g. 1-3): ")
         if not val_rank_range(rank_range, linkedlist):
