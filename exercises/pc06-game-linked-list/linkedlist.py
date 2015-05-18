@@ -11,6 +11,9 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    def isEmpty(self):
+        return self.head is None
+
     def exists(self, player_id):
         """Check if a player is in the list."""
         current = self.head
