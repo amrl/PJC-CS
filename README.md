@@ -25,5 +25,4 @@ Collection of Python code for H2 Computing in Pioneer JC.
 - Initial release.
 - Merged all PJC CS-related repositories into one. Previous repositories will
 be deleted soon.
-
-[Edit 2015/05/23: deleted]
+[2015/05/23: deleted]
