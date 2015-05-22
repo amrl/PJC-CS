@@ -3,6 +3,9 @@ Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
+### [0.0.6] - 2015/05/23
+- Added solutions to exercises/pc08-game-filestructure
+
 ### [0.0.5] - 2015/05/18
 - Added solutions to exercises/pc07-pond
 
