@@ -3,7 +3,7 @@ def PrepareData():
     datetimes = []
     scores = []
 
-    # retrive data from old file
+    # retrieve data from old file
     with open("OLDLOG.DAT", 'r') as infile:
         for line in infile:
             Datetime, Username, Score = line[:-1].split(',')

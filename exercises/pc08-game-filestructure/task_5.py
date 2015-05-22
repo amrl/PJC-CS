@@ -10,7 +10,7 @@ def HandleCollision(record, outfile):
     # find free address
     outfile.seek((address-1) * 57)
     while outfile.read(1).isalpha():
-        address += 1  # move on the next address
+        address += 1  # move on to the next address
         outfile.seek((address-1) * 57)
 
     # write to outfile at correct position
