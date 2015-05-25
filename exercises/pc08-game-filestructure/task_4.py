@@ -3,6 +3,6 @@ def HashKey(username):
     for c in username:
         ascii_sum += ord(c)
 
-    address = ascii_sum % 47 + 1
+    address = ascii_sum % 57 + 1
 
     return address
