@@ -7,7 +7,7 @@ def DirectLookup(username):
     with open("FASTER.DAT", 'r') as infile:
         # get the address of the last record in the file
         max_char = len(infile.read())
-        max_address = (max_char - 57) / 57
+        max_address = max_char // 57
 
         # find address of record containing the supplied username
         infile.seek((address-1) * 57)
