@@ -3,11 +3,11 @@ from datetime import date
 
 def val_temp(temp):
     """
-    Return True if temp is a number between -90 and 60 inclusive, False
+    Return True if temp is an integer between -90 and 60 inclusive, False
     otherwise.
     """
-    return ((temp.startswith('-') and temp[1:].isnumeric() or temp.isnumeric())
-            and -90 <= float(temp) <= 60)
+    return ((temp.startswith('-') and temp[1:].isdigit() or temp.isdigit())
+            and -90 <= int(temp) <= 60)
 
 
 def update():
@@ -38,15 +38,15 @@ def update():
         while True:
             highest_temp = input("Enter highest temperature: ")
             if val_temp(highest_temp):
-                highest_temp = float(highest_temp)
+                highest_temp = int(highest_temp)
                 break
             else:
                 print("* Invalid temperature. Try again. *")
 
         while True:
             lowest_temp = input("Enter lowest temperature: ")
-            if val_temp(lowest_temp) and float(lowest_temp) <= highest_temp:
-                lowest_temp = float(lowest_temp)
+            if val_temp(lowest_temp) and int(lowest_temp) <= highest_temp:
+                lowest_temp = int(lowest_temp)
                 break
             else:
                 print(" * Invalid temperature. Try again. *")
@@ -76,7 +76,7 @@ def update():
           .format(elapsed_days))
 
     # update file with new data if greater abs diff found today
-    if greatest_abs_diff > float(file_abs_diff):
+    if greatest_abs_diff > int(file_abs_diff):
         outfile = open("WIDEST.txt", 'w')
         current_date = str(date.today())
         print(current_date, file=outfile)
