@@ -3,6 +3,9 @@ Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
+### [0.8] - 2015/08/05
+- Added solutions to /exercises/pc09-linked-list-fruits
+
 ### [0.7] - 2015/07/28
 - Added solutions to /exercises/rev-prac-p1
 - Added quicksort algorithm to /algorithms
