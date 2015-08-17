@@ -3,6 +3,11 @@ Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
+### [0.9] - 2015/08/18
+- Added solutions to /exercises/pc10-chatterbots
+- Added solutions to /exercises/pc11-rot13
+- Added solutions to /exercises/pc12-durians
+
 ### [0.8] - 2015/08/05
 - Added solutions to /exercises/pc09-linked-list-fruits
 
