@@ -1,5 +1,8 @@
+# NOTE: this code can also handle variables with no explicit coefficients
+# e.g. 'x', '-x', '+x'
+
 # get equation from file
-infile = open("equation3.txt", 'r')
+infile = open("equation.txt", 'r')
 equation = infile.read()[:-1]
 LHS, RHS = equation.split('=')
 infile.close()
@@ -46,7 +49,7 @@ for term in left_terms:
 for term in right_terms:
     if variable in term:  # if term contains a variable
         coeff = term[:-1]
-        if term == variable or coeff == '+':  # 'x', '-x'
+        if term == variable or coeff == '+':  # 'x', '+x'
             var_sum -= 1
         elif coeff == '-':                    # '-x'
             var_sum += 1
