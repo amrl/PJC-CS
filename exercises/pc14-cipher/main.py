@@ -6,11 +6,9 @@ infile.close()
 
 # get key from key phrase by removing all repeated letters
 key = ""
-used = []  # stores letters already used
 for c in key_phrase:
-    if c not in used:
+    if c not in key:
         key += c
-        used.append(c)
 
 d = {}  # {cipher_alphabet : plain_alphabet, ...}
 # populate conversion dictionary...
