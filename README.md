@@ -3,6 +3,10 @@ Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
+### [1.0] - 2015/08/21
+- Added solutions to /exercises/pc13-linear-equation
+- Added solutions to /exercises/pc14-cipher
+
 ### [0.9] - 2015/08/18
 - Added solutions to /exercises/pc10-chatterbots
 - Added solutions to /exercises/pc11-rot13
