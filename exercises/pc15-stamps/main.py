@@ -1,5 +1,7 @@
-# NOTE: we will always have stamps with a value of +1
+# WARNING: This code is sufficient for most but not all test cases.
+# e.g. incorrect result given for INPUT3.txt
 
+# NOTE: we will always have stamps with a value of 1
 
 # get stamp data from file
 infile = open("INPUT1.txt", 'r')
