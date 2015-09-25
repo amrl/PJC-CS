@@ -1,0 +1,35 @@
+PROCEDURE insert_node(new_value)
+    IF nextfree = NULL THEN put("No space to insert") and EXIT	//Check if free node exist
+    nextfree.value = new_value					//Store new_value in next free node
+    IF start = NULL THEN					//Insert into empty list
+        holdfree = nextfree.ptr
+        nextfree.ptr = NULL
+        start = nextfree
+        nextfree = holdfree
+    ELSE
+        IF new_value < start.value THEN				//Insert as first node of list
+            holdfree = nextfree.ptr
+            nextfree.ptr = start
+            start = nextfree
+            nextfree = holdfree
+	ELSE
+            previous = start
+            current = start
+            WHILE new_value > current.value AND current.ptr != NULL	//Search position to insert node
+                previous = current
+                current = current.ptr
+            ENDWHILE
+	    IF new_value > current.value AND current.ptr = NULL THEN	//Insert as last node of list
+                holdfree = nextfree.ptr
+                current.ptr = nextfree
+                nextfree.ptr = NULL
+                nextfree = holdfree
+            ELSE							//Insert in-between nodes
+                holdfree = nextfree.ptr
+                previous.ptr = nextfree
+                nextfree.ptr = current
+                nextfree = holdfree
+            ENDIF
+        ENDIF
+    ENDIF
+ENDPROCEDURE
