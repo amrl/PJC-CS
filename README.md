@@ -3,6 +3,9 @@ Collection of Python code for H2 Computing in Pioneer JC.
 
 ## Changelog
 
+### [1.3] - 2015/09/26
+- Added solutions to /exercises/2015-dunman-prelim
+
 ### [1.2] - 2015/09/25
 - Added solutions to /exercises/2015-prelim
 
