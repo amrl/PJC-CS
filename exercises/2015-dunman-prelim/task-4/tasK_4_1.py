@@ -1,12 +1,3 @@
-class TreeNode:
-
-    def __init__(self, pid):
-        self.Lptr = None
-        self.productid = pid
-        self.Rptr = None
-        self.orders = LinkedList()
-
-
 class ListNode:
 
     def __init__(self, oid):
@@ -43,6 +34,15 @@ class LinkedList:
             output.append(current.orderid)
             current = current.next
         return ', '.join(output)
+
+
+class TreeNode:
+
+    def __init__(self, pid):
+        self.Lptr = None
+        self.productid = pid
+        self.Rptr = None
+        self.orders = LinkedList()
 
 
 class BSTree:
