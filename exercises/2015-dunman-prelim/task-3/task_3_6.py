@@ -11,11 +11,11 @@ def Insert_Book(isbn):
     isbn = isbn.ljust(13, '#')  # pad isbn
 
     outfile.seek(address*13)
-    if not outfile.read(1).isalpha():
+    if not outfile.read(1).isdigit():
         outfile.seek(address*13)
     else:  # collision encountered
         outfile.seek(bucket*13)
-        while outfile.read(1).isalpha():
+        while outfile.read(1).isdigit():
             outfile.seek(bucket*13)
             bucket += orig_bucket
         outfile.seek(bucket*13)
