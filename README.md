@@ -1,5 +1,7 @@
 # H2 Computing
-Collection of Python code for H2 Computing in Pioneer JC.
+Collection of examples and assignment code written in Python 3 for H2 Computing in Pioneer Junior College (2014-15).
+
+**Note:** This repository has been deprecated/abandoned since 1st October 2015. It is still public for reference by future students (and to remind myself of my not-so-optimal code).
 
 ## Changelog
 
